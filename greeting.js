@@ -10,6 +10,7 @@ function deleteName(event) {
   greeting.removeChild(btn);
   greeting.classList.remove(SHOWING_CN);
   greeting.style.display="none";
+  form.style.display="block";
   const currentUser = localStorage.getItem(USER_LS);
   localStorage.removeItem(USER_LS, currentUser);
   loadName();
