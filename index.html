@@ -2,9 +2,8 @@
 <html>
 
 <head>
-    <title>Time</title>
+    <title>와투두</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="./static/css/bootstrap.min.css">
@@ -13,24 +12,141 @@
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="./static/css/style.min.css">
   <link rel="stylesheet" href="./static/css/style.css">
+  <script>
+  function myon() {
+    var link = `http://google.com/search?q=${document.getElementById("search").value}`;
+    window.open(link);
+  }
+</script>
+
+
 </head>
 
-<body>
-    <div class="js-clock">
-        <h1>00:00</h1>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-navy navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>JS CHALLENGE</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">와투두
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/junnei/">Github</a>
+          </li>
+        </ul>
+        <form class="form-inline" onsubmit="myon();">
+          <div class="md-form my-0">
+            <input id="search" class="form-control mr-sm-2" type="text" type="submit" placeholder="Google-ing" aria-label="Google-ing">
+          </div>
+        </form>
+      </div>
     </div>
-    <span class="js-weather"></span>
-    <form class="js-form form">
-        <input type="text" placeholder="What is your name?" />
+  </nav>
+  <!-- Navbar -->
+  
+<body>
+  <!-- Full Page Intro -->
+  <div class="view">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient align-items-center" style="overflow:auto;">
+      <!-- Content -->
+    
+      <div class="container" style="padding-top : 150px;">
+        <!--Grid row-->
+        <div class="row mt-5">
+          <!--Grid column-->
+          
+          <div class="col-md-12 mb-10 mt-md-0 mt-10 white-text text-center text-md-left">
+            
+    <div class="js-clock">
+        <h1 class="text-center h1-responsive font-weight-bold">00:00</h1>
+    </div>
+    <div class="js-weather text-center h1-responsive font-weight-bold"></div>
+    
+    <hr class="hr-light">
+            
+    <form class="js-form">
+        <input type="text" class="formst text-center mb-3" placeholder="What is your name?" />
     </form>
-    <h2 class="js-greetings greetings"></h2>
+
+    <h2 class="js-greetings greetings text-center h1-responsive font-weight-bold"></h2>
+
     <form class="js-toDoForm">
-        <input type="text" placeholder="Write a to do" />
+        <input type="text" class="formst text-center mb-3" placeholder="Write a to do" />
     </form>
-    <ul class="js-pendingList">
-    </ul>
-    <ul class="js-finishedList">
-    </ul>
+
+    <div class="text-center h3-responsive font-weight-bold mb-3 js-pendingList">
+    </div>
+    
+    <div class="text-center h3-responsive font-weight-bold mb-3 js-finishedList">
+    </div>
+          </div>
+          <!--Grid column-->
+          
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+  </div>
+  <!-- Full Page Intro -->
+</header>
+  <!--Main Layout-->
+  <footer class="page-footer text-center font-small mt-4" style="visibility: visible; animation-name: fadeIn;">
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/profile.php?id=100011238720596" target="_blank">
+        <i class="fab fa-facebook-f fa-2x mx-4"></i>
+      </a>
+      <a href="https://github.com/junnei" target="_blank">
+        <i class="fab fa-github fa-2x mx-4"></i>
+      </a>
+      <a href="https://www.instagram.com/xu._n/" target="_blank">
+        <i class="fab fa-instagram fa-2x mx-4"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2020 Copyright : Seongjun Jang ,  장 성 준 ,  Jun.
+      <br>
+      <br>
+      <a href="http://github.com/junnei/" target="_blank">Github : Junnei</a>  /  
+      <a href="https://www.instagram.com/xu._n/" target="_blank">Instagram : xu._n</a>  /  
+      <a href="" target="_blank">Facebook : 장 성 준</a>
+      <br>
+    </div>
+    <div class="footer-copyright pb-3 text-md-right px-4">
+      Design from
+      <a class="px-2" href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+      <a class="btn-outline-white waves-effect waves-light py-1 px-2" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button" >Download MDB
+        <i class="fas fa-download ml-2"></i>
+      </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- Initializations -->
     <script src="jquery.min.js"></script>
     <script src="weather.js"></script>
     <script src="clock.js"></script>

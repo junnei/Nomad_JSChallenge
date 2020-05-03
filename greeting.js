@@ -9,6 +9,7 @@ function deleteName(event) {
   const btn = event.target;
   greeting.removeChild(btn);
   greeting.classList.remove(SHOWING_CN);
+  greeting.style.display="none";
   const currentUser = localStorage.getItem(USER_LS);
   localStorage.removeItem(USER_LS, currentUser);
   loadName();
@@ -26,13 +27,16 @@ function handleSubmit(event) {
 }
 
 function askForName() {
+  form.style.display="block";
   form.classList.add(SHOWING_CN);
   form.addEventListener("submit", handleSubmit);
 }
 
 function paintGreeting(text) {
   form.classList.remove(SHOWING_CN);
+  form.style.display="none";
   greeting.classList.add(SHOWING_CN);
+  greeting.style.display="block";
   greeting.innerText = `Hello ${text}`;
   const delBtn = document.createElement("button");
   delBtn.innerText = "❌";

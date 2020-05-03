@@ -140,14 +140,16 @@ function saveToDos() {
 function handleSubmit(event) {
   event.preventDefault();
   const currentValue = toDoInput.value;
-  const newID = toDosID + 1;
-  const toDoObj = {
-    id: newID,
-    text: currentValue
-  };
-  toDosID = newID;
-  paintToDo(toDoObj);
-  toDoInput.value = "";
+  if(currentValue!==""){
+    const newID = toDosID + 1;
+    const toDoObj = {
+      id: newID,
+      text: currentValue
+    };
+    toDosID = newID;
+    paintToDo(toDoObj);
+    toDoInput.value = "";
+  }
 }
 
 function loadToDos() {
