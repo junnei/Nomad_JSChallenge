@@ -10,7 +10,6 @@ function deleteName(event) {
   greeting.removeChild(btn);
   greeting.classList.remove(SHOWING_CN);
   greeting.style.display="none";
-  form.style.display="block";
   const currentUser = localStorage.getItem(USER_LS);
   localStorage.removeItem(USER_LS, currentUser);
   loadName();
@@ -40,6 +39,10 @@ function paintGreeting(text) {
   greeting.style.display="block";
   greeting.innerText = `Hello ${text}`;
   const delBtn = document.createElement("button");
+  delBtn.classList.add("btn");
+  delBtn.classList.add("btn-outline-white");
+  delBtn.classList.add("btn-round");
+  delBtn.style.padding="3px";
   delBtn.innerText = "❌";
   delBtn.addEventListener("click", deleteName);
   greeting.appendChild(delBtn);
@@ -56,6 +59,7 @@ function loadName() {
 
 function init() {
   loadName();
+  form.addEventListener("submit", handleSubmit);
 }
 
 init();

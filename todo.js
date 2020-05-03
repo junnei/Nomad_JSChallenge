@@ -12,13 +12,19 @@ let toDos = [];
 let finishedToDos = [];
 
 function paintToDo(obj) {
-  const li = document.createElement("li");
+  const li = document.createElement("div");
   const delBtn = document.createElement("button");
   const finishBtn = document.createElement("button");
   const span = document.createElement("span");
   delBtn.innerText = "❌";
+  delBtn.classList.add("btn");
+  delBtn.classList.add("btn-round");
+  delBtn.style.padding="3px";
   delBtn.addEventListener("click", removeToDo);
   finishBtn.innerText = "✅";
+  finishBtn.classList.add("btn");
+  finishBtn.classList.add("btn-round");
+  finishBtn.style.padding="3px";
   finishBtn.addEventListener("click", finishToDo);
   span.innerText = obj.text;
   li.appendChild(delBtn);
@@ -35,10 +41,13 @@ function paintToDo(obj) {
 }
 
 function paintFinished(obj) {
-  const li = document.createElement("li");
+  const li = document.createElement("div");
   const restoreBtn = document.createElement("button");
   const span = document.createElement("span");
   restoreBtn.innerText = "⟲";
+  restoreBtn.classList.add("btn");
+  restoreBtn.classList.add("btn-round");
+  restoreBtn.style.padding="3px";
   restoreBtn.addEventListener("click", restoreToDo);
   span.innerText = obj.text;
   li.appendChild(restoreBtn);
@@ -78,10 +87,13 @@ function finishToDo(event) {
     return toDo.id === parseInt(parent.id, 10);
   });
 
-  const li = document.createElement("li");
+  const li = document.createElement("div");
   const finishBtn = document.createElement("button");
   const span = document.createElement("span");
   finishBtn.innerText = "⟲";
+  finishBtn.classList.add("btn");
+  finishBtn.classList.add("btn-round");
+  finishBtn.style.padding="3px";
   finishBtn.addEventListener("click", restoreToDo);
   span.innerText = addToDos.text;
   li.appendChild(finishBtn);
@@ -109,13 +121,19 @@ function restoreToDo(event) {
 
   finishedToDos = cleanToDos;
 
-  const li = document.createElement("li");
+  const li = document.createElement("div");
   const delBtn = document.createElement("button");
   const finishBtn = document.createElement("button");
   const span = document.createElement("span");
   delBtn.innerText = "❌";
+  delBtn.classList.add("btn");
+  delBtn.classList.add("btn-round");
+  delBtn.style.padding="3px";
   delBtn.addEventListener("click", removeToDo);
   finishBtn.innerText = "✅";
+  finishBtn.classList.add("btn");
+  finishBtn.classList.add("btn-round");
+  finishBtn.style.padding="3px";
   finishBtn.addEventListener("click", finishToDo);
   span.innerText = addToDo.text;
   li.appendChild(delBtn);
